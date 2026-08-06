@@ -1,85 +1,145 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #fafaf8;
-    color: #1b1b1b;
+html{
+    scroll-behavior:smooth;
 }
 
-header {
-    width: 100%;
-    padding: 24px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Pretendard,sans-serif;
+    background:#f8f7f4;
+    color:#1b1b1b;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 1px;
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:rgba(248,247,244,.92);
+    backdrop-filter:blur(14px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 7%;
+    border-bottom:1px solid rgba(0,0,0,.05);
 }
 
-nav {
-    display: flex;
-    gap: 32px;
+.logo{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:1px;
 }
 
-nav a {
-    color: #1b1b1b;
-    text-decoration: none;
-    font-weight: 500;
+nav{
+    display:flex;
+    gap:40px;
 }
 
-.hero {
-    height: calc(100vh - 90px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
+nav a{
+    color:#1b1b1b;
+    text-decoration:none;
+    font-size:15px;
+    transition:.25s;
 }
 
-.hero h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
+nav a:hover{
+    color:#c8a547;
 }
 
-.hero h2 {
-    font-size: 26px;
-    color: #c9a34a;
-    margin-bottom: 18px;
-    letter-spacing: 4px;
+main{
+    width:100%;
 }
 
-.hero p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 40px;
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 80px;
 }
 
-.buttons {
-    display: flex;
-    gap: 16px;
+.badge{
+    color:#c8a547;
+    font-size:13px;
+    letter-spacing:3px;
+    font-weight:700;
+    margin-bottom:18px;
 }
 
-button {
-    background: #1b1b1b;
-    color: white;
-    border: none;
-    padding: 14px 34px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 16px;
+.hero h1{
+    font-size:72px;
+    font-weight:800;
+    margin-bottom:18px;
 }
 
-button.outline {
-    background: transparent;
-    color: #1b1b1b;
-    border: 2px solid #c9a34a;
+.hero p{
+    font-size:20px;
+    color:#666;
+    margin-bottom:45px;
+    max-width:600px;
+    line-height:1.7;
+}
+
+.buttons{
+    display:flex;
+    gap:18px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    padding:16px 36px;
+    border-radius:999px;
+    background:#1b1b1b;
+    color:white;
+    font-size:16px;
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+.outline{
+    background:transparent;
+    color:#1b1b1b;
+    border:2px solid #c8a547;
+}
+
+.outline:hover{
+    background:#c8a547;
+    color:white;
+}
+
+@media(max-width:768px){
+
+nav{
+    display:none;
+}
+
+.hero h1{
+    font-size:44px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.buttons{
+    flex-direction:column;
+    width:100%;
+    max-width:300px;
+}
+
+button{
+    width:100%;
+}
+
 }
