@@ -1,9 +1,11 @@
-let balance = 10000;
+let balance = Number(localStorage.getItem("balance")) || 10000;
 
 const balanceText = document.getElementById("balance");
 
 function updateBalance() {
     balanceText.textContent = "₱" + balance.toLocaleString();
+
+    localStorage.setItem("balance", balance);
 }
 
 function earn(min, max, job) {
