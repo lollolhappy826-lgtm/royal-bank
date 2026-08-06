@@ -31,5 +31,42 @@ document.getElementById("royal").onclick = () => {
 document.getElementById("beg").onclick = () => {
     earn(0, 100, "🎁 구걸하기");
 };
+document.getElementById("lotto").onclick = () => {
 
+    if (balance < 1000) {
+        alert("잔액이 부족합니다.");
+        return;
+    }
+
+    balance -= 1000;
+
+    const chance = Math.random() * 100;
+
+    let prize = 0;
+    let message = "";
+
+    if (chance < 5) {
+        prize = 1000000;
+        message = "🏆 1등 당첨!";
+    } else if (chance < 15) {
+        prize = 10000;
+        message = "🥈 2등 당첨!";
+    } else if (chance < 50) {
+        prize = 5000;
+        message = "🥉 3등 당첨!";
+    } else {
+        message = "😭 꽝!";
+    }
+
+    balance += prize;
+
+    updateBalance();
+
+    if (prize > 0) {
+        alert(`${message}\n\n+₱${prize.toLocaleString()}`);
+    } else {
+        alert(message);
+    }
+
+};
 updateBalance();
