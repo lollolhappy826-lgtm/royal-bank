@@ -1,4 +1,4 @@
-let balance = 1248530;
+let balance = 10000;
 
 const balanceText = document.getElementById("balance");
 
